@@ -1,4 +1,11 @@
 # Repositorio para la clase de Programación Web
-**Alumno**: Josue Francisco Eguia Rodriguez
 
-**No. Control**: 20100191
+```javascript
+const alumno = {
+    nombre: "Josue",
+    apellido: "Eguia",
+    numeroControl: 20100191,
+    semestre: 5,
+    carrera: "Ing. Sistemas Computacionales"
+}
+```
