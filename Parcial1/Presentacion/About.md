@@ -11,7 +11,7 @@ const alumno = {
 ---
 
 ## Experiencia Laboral
-> Marzo - 2022 / Actualidad : Becario en **Aduasis Logistica** como desarrollador
+> Marzo, 2022 --> Actualidad : Becario en **Aduasis Logistica** como desarrollador
 
 
 ## Lenguajes de Programación que domino
