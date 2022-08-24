@@ -1,4 +1,5 @@
 # Presentación Personal
+
 ````javascript
 const alumno = {
     nombre: "Josue",
@@ -15,11 +16,19 @@ const alumno = {
 
 ## Lenguajes de Programación que domino
 - C#
-- Javascript
 - Java
+- Javascript
+- Typescript
+- Python
 
 ## Lenguajes de Programacion que me gustaría aprender
 
 - Kotlin
 
 > Pienso especializarme en desarrollo de aplicaciones.
+
+## Hobbies
+
+- Programar
+- Escuchar música
+- Jugar videojuegos
