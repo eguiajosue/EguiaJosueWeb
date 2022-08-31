@@ -1,22 +1,14 @@
 <?php
 
-    include("database.php");
+include("database.php");
 
-    if (isset($_POST['update'])) {
-        $id = $_GET['id'];
-        echo $id;
-//        $name = $_POST['name'];
-//        $category = $_POST['category'];
-//        $brand = $_POST['brand'];
-//        $price = $_POST['price'];
-//        $description = $_POST['description'];
-    }
-//    $id = $_REQUEST['id'];
-//    $name = $_REQUEST['name'];
-//    $category = $_REQUEST['category'];
-//    $brand = $_REQUEST['brand'];
-//    $price = $_REQUEST['price'];
-//    $description = $_REQUEST['description'];
+if (isset($_POST['id'])) {
+    $id = $_GET['id'];
+    $name = $_POST['model'];
+    $category = $_POST['category'];
+    $brand = $_POST['brand'];
+    $price = $_POST['price'];
+    $description = $_POST['description'];
 
     $query = "UPDATE product SET 
                    name = '$name', 
@@ -24,15 +16,15 @@
                    brand = '$brand', 
                    price = '$price', 
                    description = '$description' 
-               WHERE id = '$id'";
+               WHERE id = $id";
 
     $result = mysqli_query($connection, $query);
 
-    if (!$result) die("The product cannot be edited");
+    if (!$result) die("The product cannot be saved");
 
-    $_SESSION['message'] = 'Product Edited Succesfuly!';
-    $_SESSION['type'] = 'warning';
+    $_SESSION['message'] = 'Product Saved Succesfuly!';
+    $_SESSION['type'] = 'success';
 
-    echo "edited";
-
-//    header("Location: index.php");
+//     echo "Saved";
+    header("Location: index.php");
+}

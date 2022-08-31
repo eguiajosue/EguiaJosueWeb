@@ -7,7 +7,7 @@
                     <p class="card-title">PRODUCT INFO</p>
                     <form action="save.php" method="post">
                         <div class="form-group">
-                            <input class="form-control mb-2" type="text" name="name" placeholder="Product's Name">
+                            <input class="form-control mb-2" type="text" name="model" placeholder="Product's Model">
                         </div>
                         <div class="form-group mb-2">
                             <select class="form-select" name="category" id="">
@@ -81,7 +81,7 @@
                                     <td> $<?php echo $new_product['price'] ?> </td>
                                     <td> <?php echo $new_product['description'] ?> </td>
                                     <td>
-                                        <a class="btn btn-secondary" data-bs-toggle="modal" href="#updateModal<?php echo $new_product['id']; ?>">
+                                        <a class="btn btn-secondary" data-bs-toggle="modal" href="#updateModal<?php echo $new_product['id'] ?>" data-target="#updateModal<?php echo $new_product['id']?>">
                                             Edit
                                         </a>
                                         <a href="delete.php?id=<?php echo $new_product['id']?>" class="btn btn-danger">Delete</a>

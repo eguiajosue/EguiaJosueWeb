@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Proyecto Final - CRUD</title>
     <!-- Importacion de Bootstrap -->
+    <link rel="stylesheet" href="../assets/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <script defer src="js/bootstrap.min.js"></script>

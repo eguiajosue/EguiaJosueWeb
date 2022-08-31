@@ -1,5 +1,4 @@
-
-<div class="modal fade" id="updateModal<?php echo $new_product['id']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="updateModal<?php echo $new_product['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -8,17 +7,17 @@
             </div>
             <div class="modal-body">
                 <div class="card card-body">
-                    <form action="update.php?=<?php echo $_GET[$new_product['id']]; ?>" method="post">
+                    <form action="update.php" method="post">
                         <div class="form-group row">
                             <label class="form-text col-sm-3 " for="name">Product's Id:</label>
                             <div class="col-sm-9">
-                                <input class="form-control mb-2 disabled" disabled type="text" name="name"  value="<?php echo $new_product['id']; ?>">
+                                <input class="form-control mb-2 disabled" disabled type="text" name="id"  value="<?= $new_product['id'] ?>">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="form-text col-sm-3" for="name">Product's Name:</label>
+                            <label class="form-text col-sm-3" for="name">Product's Model:</label>
                             <div class="col-sm-9">
-                                <input class="form-control mb-2" type="text" name="name" placeholder="Product's Name" value="<?php echo $new_product['name']; ?>">
+                                <input class="form-control mb-2" type="text" name="model" placeholder="Product's Model" value="<?= $new_product['name'] ?>">
                             </div>
                         </div>
                         <div class="form-group row mb-2">
@@ -41,20 +40,21 @@
                         <div class="form-group row mb-2">
                             <label class="form-text col-sm-3" for="brand">Product's Brand:</label>
                             <div class="col-sm-9">
-                                <input class="form-control" type="text" name="brand" placeholder="Product's Brand" value="<?php echo $new_product['brand']; ?>">
+                                <input class="form-control" type="text" name="brand" placeholder="Product's Brand" value="<?= $new_product['brand'] ?>">
                             </div>
                         </div>
                         <div class="form-group row mb-2">
                             <label class="form-text col-sm-3" for="price">Product's Price:</label>
                             <div class="col-sm-9">
-                                <input type="number" name="price" id="price" class="form-control" placeholder="Price" value="<?php echo $new_product['price']; ?>">
+                                <input type="number" name="price" id="price" class="form-control" placeholder="Price" value="<?= $new_product['price'] ?>">
                             </div>
                         </div>
 
                         <label class="form-text " for="description">Product's Description:</label>
-                        <textarea class="form-control mb-2" name="description" rows="5" placeholder="Product's Description" ><?php echo $new_product['description']; ?></textarea>
+                        <textarea class="form-control mb-2" name="description" rows="5" placeholder="Product's Description" ><?= $new_product['description'] ?></textarea>
 
-                        <input class="btn btn-primary" type="submit" value="Update Product" name="update">
+<!--                        <a href="update.php?id=--><?php //echo $new_product['id']?><!--" class="btn btn-primary">Update</a>-->
+                        <input href="update.php?id=<?php echo $new_product['id']?>" class="btn btn-primary" type="submit" value="Update Product" name="update">
                     </form>
                 </div>
             </div>
