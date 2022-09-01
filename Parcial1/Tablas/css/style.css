@@ -29,6 +29,18 @@ td {
     text-align: center;
 }
 
+tr:nth-child(even) {
+    background-color: #e5e5e5;
+}
+
 tr:active {
     background-color: #d3cdcd;
+}
+
+table, th, td {
+    border: 1px solid;
+}
+
+.calificacion {
+    font-weight: bold;
 }

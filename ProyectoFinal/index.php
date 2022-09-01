@@ -3,14 +3,14 @@
     <div class="container p-4">
         <div class="row">
             <div class="col-md-3">
-                <div class="card card-body">
-                    <p class="card-title">PRODUCT INFO</p>
+                <div class="card card-body position-sticky top-0">
+                    <p class="card-title ">PRODUCT INFO</p>
                     <form action="save.php" method="post">
                         <div class="form-group">
                             <input class="form-control mb-2" type="text" name="model" placeholder="Product's Model">
                         </div>
                         <div class="form-group mb-2">
-                            <select class="form-select" name="category" id="">
+                            <select class="form-select" name="category">
                                 <option>- Select one category -</option>
                                 <option value="monitor">Monitor</option>
                                 <option value="cabinet">Cabinet</option>
