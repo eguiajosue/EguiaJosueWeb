@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    font-family: Arial;
+}
+
+header {
+    padding: 1.5rem;
+    background-color: #282626;
+    color: #fff;
+}
+
+section {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.cuadro {
+    width: 250px;
+    height: 50px;
+    background-color: #71a2d3;
+    border: #000 solid 5px;
+}
+
+.cuadro-relativo {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow-x: scroll;
+}
+
+.cuadro-absoluto {
+    position: absolute;
+    left: 70px;
+    top: 70px;
+    background-color: #f19595;
+}
