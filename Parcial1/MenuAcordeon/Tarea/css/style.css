@@ -58,16 +58,19 @@
   box-sizing: border-box;
 }
 
-/* Estios para el bloque de elementos dentro de un encabezadp */
+/* Estios para el bloque de elementos dentro de un encabezado
+  - Inicialmete los sub-elementos tienen un alto de 0 por lo que se mantiene oculta la lista
+*/
 .list li ul {
   max-height: 0;
   margin: 0;
   padding: 0;
   list-style: none;
   overflow: hidden;
-  transition: 0.3s all ease-in;
+  transition: 0.3s all ease;
 }
 
+/* Se estilizan los elementos donde est[a el texto del elemento */
 .list li li a {
   padding: 10px 10px 10px 40px;
   background: #999;
@@ -78,15 +81,18 @@
   box-sizing: border-box;
 }
 
+/* Se quita el borde de abajo al ultimo elemento */
 .list li li:last-child a {
   border-bottom: 0;
 }
 
+/* Al momento en que se de clic al encabezado de cada lista se va a ejecutar el pseudoselector :target que lo que hará es expandir la lista asignando una altura */
 .list li:target ul {
   max-height: 300px;
   transition: 0.5s all ease;
 }
 
+/* Al momento en que un elemento <a> sea visitado se estiliza el texto */
 .list li a:visited {
   color: #fff;
 }
@@ -97,5 +103,5 @@
 
 .list__header a:hover {
   background-color: #1f3041;
-  color: #fff;
+  color: #000;
 }
