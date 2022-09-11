@@ -1,3 +1,4 @@
+/* Estilos globales */
 * {
   margin: 0;
   padding: 0;
@@ -6,33 +7,59 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.container {
-
+.header {
+  padding: 2rem;
+  margin-bottom: 2rem;
+  background-color: #413c3c;
 }
 
-ul.list {
-    margin: 10px auto;
-    padding: 0;
-    list-style: none;
-    width: 100%;
-    font-size: 18px;
+.header__text {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Tahoma;
+  font-weight: bold;
+  background-color: #413c3c;
+  color: #fff;
 }
 
-ul.list li {
-    list-style: none;
+.header__data {
+  margin-top: 1rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.7rem;
+  background-color: #413c3c;
 }
 
-ul.list li a {
-  display: block;
+/* Estilos para la lista */
+.list {
+  margin: 10px auto;
+  padding: 0;
+  list-style: none;
   width: 250px;
+  font-size: 18px;
+  box-shadow: 5px 5px 5px #c4c4c4;
+}
+
+/* Estilos de los encabezados y elementos de la lista
+    Se elimina la viñeta
+*/
+.list li {
+  list-style: none;
+}
+
+/* Estilos para los elementos de cada elemento de la lista */
+.list li a {
+  display: block;
   padding: 10px 10px 10px 20px;
   background: #2c3e50;
   color: #eee;
+  border-top: #626262 solid 1px;
   text-decoration: none;
   box-sizing: border-box;
 }
 
-ul.list li ul {
+/* Estios para el bloque de elementos dentro de un encabezadp */
+.list li ul {
   max-height: 0;
   margin: 0;
   padding: 0;
@@ -41,7 +68,7 @@ ul.list li ul {
   transition: 0.3s all ease-in;
 }
 
-ul.list li li a {
+.list li li a {
   padding: 10px 10px 10px 40px;
   background: #999;
   color: #000;
@@ -51,26 +78,24 @@ ul.list li li a {
   box-sizing: border-box;
 }
 
-ul.acorc li li:last-child a {
+.list li li:last-child a {
   border-bottom: 0;
 }
 
-ul.list li:target ul {
+.list li:target ul {
   max-height: 300px;
-  transition: 0.3s all ease-in;
+  transition: 0.5s all ease;
 }
 
-ul.list li a:visited {
-    color: #fff;
-}
-
-ul.list li a:hover {
-  background: #666;
+.list li a:visited {
   color: #fff;
 }
 
-ul.list li:target ul {
-  max-height: 300px;
-  transition: 0.3s all ease-in;
+.list li ul li a:hover {
+  background-color: #b6b6b6;
 }
 
+.list__header a:hover {
+  background-color: #1f3041;
+  color: #fff;
+}
