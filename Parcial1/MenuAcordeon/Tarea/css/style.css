@@ -1,16 +1,29 @@
+/* Variables */
+:root {
+  --main-color: #2c3e50;
+  --main-hover-color: #1f3041;
+  --secondary-color: #d7d7d7;
+  --secondary-hover-color: #b6b6b6;
+  --background-color: #ecf0f1;
+  --secondary-bg-color: #413c3c;
+  --font-color: #4d4949;
+  --white: #eee;
+  --black: #000;
+}
+
 /* Estilos globales */
 * {
   margin: 0;
   padding: 0;
   border: 0;
-  background-color: #ecf0f1;
+  background-color: var(--background-color);
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .header {
   padding: 2rem;
   margin-bottom: 2rem;
-  background-color: #413c3c;
+  background-color: var(--secondary-bg-color);
 }
 
 .header__text {
@@ -18,16 +31,16 @@
   text-transform: uppercase;
   font-family: Tahoma;
   font-weight: bold;
-  background-color: #413c3c;
-  color: #fff;
+  background-color: var(--secondary-bg-color);
+  color: var(--white);
 }
 
 .header__data {
   margin-top: 1rem;
   text-align: center;
-  color: #fff;
+  color: var(--white);
   font-size: 0.7rem;
-  background-color: #413c3c;
+  background-color: var(--secondary-bg-color);
 }
 
 /* Estilos para la lista */
@@ -51,8 +64,8 @@
 .list li a {
   display: block;
   padding: 10px 10px 10px 20px;
-  background: #2c3e50;
-  color: #eee;
+  background: var(--main-color);
+  color: var(--white);
   border-top: #626262 solid 1px;
   text-decoration: none;
   box-sizing: border-box;
@@ -73,8 +86,8 @@
 /* Se estilizan los elementos donde est[a el texto del elemento */
 .list li li a {
   padding: 10px 10px 10px 40px;
-  background: #999;
-  color: #000;
+  background: var(--secondary-color);
+  color: var(--font-color);
   font-size: 16px;
   border: 0;
   border-bottom: 1px solid #ccc;
@@ -97,11 +110,11 @@
   color: #fff;
 }
 
-.list li ul li a:hover {
-  background-color: #b6b6b6;
+.list__header a:hover {
+  background-color: var(--main-hover-color);
 }
 
-.list__header a:hover {
-  background-color: #1f3041;
-  color: #000;
+.list li ul li a:hover {
+  background-color: var(--secondary-hover-color);
 }
+
