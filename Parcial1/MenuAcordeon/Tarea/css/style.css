@@ -83,6 +83,7 @@
   display: block, display: none por el uso de alturas para agregar animaciones al momento de usar el taget
 */
 .list li ul {
+  /*display: none;*/
   max-height: 0;
   margin: 0;
   padding: 0;
@@ -109,6 +110,7 @@
 
 /* Al momento en que se de clic al encabezado de cada lista se va a ejecutar el pseudoselector :target que lo que hará es expandir la lista asignando una altura */
 .list li:target ul {
+  /*display: block;*/
   max-height: 300px;
   transition: 0.5s all ease;
 }
@@ -126,7 +128,7 @@
   background-color: var(--secondary-hover-color);
 }
 
-/* Uso de MediaQuerys */
+/* Uso de Media Query's */
 @media (max-width: 525px) {
   .list {
     flex-direction: column;
