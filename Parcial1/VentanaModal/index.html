@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea: Menu Acordeon</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header__text">Menú Acordeón: Tecnologías Web</h1>
+        <p class="header__data">Josue Francisco Eguia Rodriguez #20100191</p>
+    </header>
+
+    <main class="container">
+        <ul class="list">
+            <li class="list__header" id="option1">
+                <a href="#option1">Front-End</a>
+                <ul class="list__submenu">
+                    <li class="element"><a href="#modal_html">HTML</a></li>
+                    <li class="element"><a href="#modal_css">CSS</a></li>
+                    <li class="element"><a href="#modal_js">Javascript</a></li>
+                </ul>
+            </li>
+            <li class="list__header" id="option2">
+                <a href="#option2">Back-End</a>
+                <ul>
+                    <li class="element"><a href="#modal_java">Java</a></li>
+                    <li class="element"><a href="#modal_csharp">C#</a></li>
+                    <li class="element"><a href="#modal_python">Python</a></li>
+                </ul>
+            </li>
+            <li class="list__header" id="option3">
+                <a href="#option3">Frameworks</a>
+                <ul>
+                    <li class="element"><a href="#modal_react">React</a></li>
+                    <li class="element"><a href="#modal_angular">Angular</a></li>
+                    <li class="element"><a href="#modal_vue">Vue</a></li>
+                </ul>
+            </li>
+            <li class="list__header" id="option4">
+                <a href="#option4">Bases de Datos</a>
+                <ul>
+                    <li class="element"><a href="#modal_mysql">MySQL</a></li>
+                    <li class="element"><a href="#modal_mongodb">MongoDB</a></li>
+                    <li class="element"><a href="#modal_sqlserver">SQLServer</a></li>
+                </ul>
+            </li>
+        </ul>
+    </main>
+
+<!--  FrontEnd  -->
+    <div id="modal_html" class="modal">
+        <div class="modal__container">
+            <div class="modal__header">
+                <h2 class="modal__title">HTML</h2>
+                <a class="close__modal" href="#">
+                    <img src="images/close.png" alt="">
+                </a>
+            </div>
+
+            <div class="modal__info">
+                <div class="modal__image-container">
+                    <img class="modal__image" src="images/html.svg" alt="Logo HTML ">
+                </div>
+                <p class="modal__text">
+                    HTML (Lenguaje de Marcas de Hipertexto, del inglés HyperText Markup Language) es el componente más básico de la Web. Define el significado y la estructura del contenido web. Además de HTML, generalmente se utilizan otras tecnologías para describir la apariencia/presentación de una página web (CSS) o la funcionalidad/comportamiento (JavaScript).
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal_css" class="modal">
+        <div class="modal__container">
+            <div class="modal__header">
+                <h2 class="modal__title">CSS</h2>
+                <a class="close__modal" href="#">
+                    <img src="images/close.png" alt="">
+                </a>
+            </div>
+
+            <div class="modal__info">
+                <div class="modal__image-container">
+                    <img class="modal__image" src="images/css.svg" alt="Logo HTML ">
+                </div>
+                <p class="modal__text">
+                    Hojas de Estilo en Cascada (del inglés Cascading Style Sheets) o CSS es el lenguaje de estilos utilizado para describir la presentación de documentos HTML o XML (en-US) (incluyendo varios languages basados en XML como SVG, MathML o XHTML). CSS describe como debe ser renderizado el elemento estructurado en la pantalla, en papel, en el habla o en otros medios.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal_js" class="modal">
+        <div class="modal__container">
+            <div class="modal__header">
+                <h2 class="modal__title">JavaScript</h2>
+                <a class="close__modal" href="#">
+                    <img src="images/close.png" alt="">
+                </a>
+            </div>
+
+            <div class="modal__info">
+                <div class="modal__image-container">
+                    <img class="modal__image" src="images/javascript.svg" alt="Logo HTML ">
+                </div>
+                <p class="modal__text">
+                    JavaScript (JS) es un lenguaje de programación ligero, interpretado, o compilado justo-a-tiempo (just-in-time) con funciones de primera clase. Si bien es más conocido como un lenguaje de scripting (secuencias de comandos) para páginas web, y es usado en muchos entornos fuera del navegador, tal como Node.js, Apache CouchDB y Adobe Acrobat JavaScript es un lenguaje de programación basada en prototipos, multiparadigma, de un solo hilo, dinámico, con soporte para programación orientada a objetos, imperativa y declarativa (por ejemplo programación funcional).
+                </p>
+            </div>
+        </div>
+    </div>
+
+<!--  Frameworks  -->
+    <div id="modal_react" class="modal">
+        <div class="modal__container">
+            <div class="modal__header">
+                <h2 class="modal__title">ReactJS</h2>
+                <a class="close__modal" href="#">
+                    <img src="images/close.png" alt="">
+                </a>
+            </div>
+
+            <div class="modal__info">
+                <div class="modal__image-container">
+                    <img class="modal__image" src="images/react.svg" alt="Logo HTML ">
+                </div>
+                <p class="modal__text">
+                    Es una librería open source de JavaScript para desarrollar interfaces de usuario. Fue lanzada en el año 2013 y desarrollada por Facebook, quienes también la mantienen actualmente junto a una comunidad de desarrolladores independientes y compañías.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal_angular" class="modal">
+        <div class="modal__container">
+            <div class="modal__header">
+                <h2 class="modal__title">Angular</h2>
+                <a class="close__modal" href="#">
+                    <img src="images/close.png" alt="">
+                </a>
+            </div>
+
+            <div class="modal__info">
+                <div class="modal__image-container">
+                    <img class="modal__image" src="images/angular.svg" alt="Logo HTML ">
+                </div>
+                <p class="modal__text">
+                    Angular es un Framework de JavaScript de código abierto escrito en TypeScript. Su objetivo principal es desarrollar aplicaciones de una sola página. Google se encarga del mantenimiento y constantes actualizaciones de mejoras para este framework.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal_vue" class="modal">
+        <div class="modal__container">
+            <div class="modal__header">
+                <h2 class="modal__title">VUE</h2>
+                <a class="close__modal" href="#">
+                    <img src="images/close.png" alt="">
+                </a>
+            </div>
+
+            <div class="modal__info">
+                <div class="modal__image-container">
+                    <img class="modal__image" src="images/vue.svg" alt="Logo HTML ">
+                </div>
+                <p class="modal__text">
+                    Vue es un framework open source de JavaScript, el cual nos permite construir interfaces de usuarios de una forma muy sencilla. La curva de aprendizaje, desde mi punto de vista, es relativamente baja, claro, debes conocer muy bien JavaScript, saber trabajar con callbacks, promesas, objetos, entre otros temas más.
+                </p>
+            </div>
+        </div>
+    </div>
+
+<!--  Backend  -->
+    <div id="modal_java" class="modal">
+        <div class="modal__container">
+            <div class="modal__header">
+                <h2 class="modal__title">Java</h2>
+                <a class="close__modal" href="#">
+                    <img src="images/close.png" alt="">
+                </a>
+            </div>
+
+            <div class="modal__info">
+                <div class="modal__image-container">
+                    <img class="modal__image" src="images/java.svg" alt="Logo HTML ">
+                </div>
+                <p class="modal__text">
+                    Java es un lenguaje de programación ampliamente utilizado para codificar aplicaciones web. Ha sido una opción popular entre los desarrolladores durante más de dos décadas, con millones de aplicaciones Java en uso en la actualidad. Java es un lenguaje multiplataforma, orientado a objetos y centrado en la red que se puede utilizar como una plataforma en sí mismo. Es un lenguaje de programación rápido, seguro y fiable para codificar todo, desde aplicaciones móviles y software empresarial hasta aplicaciones de macrodatos y tecnologías del lado del servidor.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal_python" class="modal">
+        <div class="modal__container">
+            <div class="modal__header">
+                <h2 class="modal__title">Python</h2>
+                <a class="close__modal" href="#">
+                    <img src="images/close.png" alt="">
+                </a>
+            </div>
+
+            <div class="modal__info">
+                <div class="modal__image-container">
+                    <img class="modal__image" src="images/python.svg" alt="Logo HTML ">
+                </div>
+                <p class="modal__text">
+                    En términos técnicos, Python es un lenguaje de programación de alto nivel, orientado a objetos, con una semántica dinámica integrada, principalmente para el desarrollo web y de aplicaciones informáticas.
+                    Es muy atractivo en el campo del Desarrollo Rápido de Aplicaciones (RAD) porque ofrece tipificación dinámica y opciones de encuadernación dinámicas.
+                    Python es relativamente simple, por lo que es fácil de aprender, ya que requiere una sintaxis única que se centra en la legibilidad. Los desarrolladores pueden leer y traducir el código Python mucho más fácilmente que otros lenguajes.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal_csharp" class="modal">
+        <div class="modal__container">
+            <div class="modal__header">
+                <h2 class="modal__title">C#</h2>
+                <a class="close__modal" href="#">
+                    <img src="images/close.png" alt="">
+                </a>
+            </div>
+
+            <div class="modal__info">
+                <div class="modal__image-container">
+                    <img class="modal__image" src="images/csharp.svg" alt="Logo HTML ">
+                </div>
+                <p class="modal__text">
+                    C# (léase C Sharp), es una evolución que Microsoft realizó de este lenguaje, tomando lo mejor de los lenguajes C y C++, y ha continuado añadiéndole funcionalidades, tomando de otros lenguajes, como java, algo de su sintaxis evolucionada. Lo orientó a objetos para toda su plataforma NET (tanto Framework como Core), y con el tiempo adaptó las facilidades de la creación de código que tenía otro de sus lenguajes más populares, Visual Basic, haciéndolo tan polivalente y fácil de aprender como éste, sin perder ni un ápice de la potencia original de C. En la versión de .NET Core, se ha reconstruido por completo su compilador, haciendo las aplicaciones un 600% más rápidas.
+                </p>
+            </div>
+        </div>
+    </div>
+
+<!--  Bases de datos  -->
+    <div id="modal_mysql" class="modal">
+        <div class="modal__container">
+            <div class="modal__header">
+                <h2 class="modal__title">MySQL</h2>
+                <a class="close__modal" href="#">
+                    <img src="images/close.png" alt="">
+                </a>
+            </div>
+
+            <div class="modal__info">
+                <div class="modal__image-container">
+                    <img class="modal__image" src="images/mysql.svg" alt="Logo HTML ">
+                </div>
+                <p class="modal__text">
+                    MySQL es el sistema de gestión de bases de datos relacional más extendido en la actualidad al estar basada en código abierto. Desarrollado originalmente por MySQL AB, fue adquirida por Sun MicroSystems en 2008 y esta su vez comprada por Oracle Corporation en 2010, la cual ya era dueña de un motor propio InnoDB para MySQL.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal_mongodb" class="modal">
+        <div class="modal__container">
+            <div class="modal__header">
+                <h2 class="modal__title">MongoDB</h2>
+                <a class="close__modal" href="#">
+                    <img src="images/close.png" alt="">
+                </a>
+            </div>
+
+            <div class="modal__info">
+                <div class="modal__image-container">
+                    <img class="modal__image" src="images/mongodb.svg" alt="Logo HTML ">
+                </div>
+                <p class="modal__text">
+                    MongoDB (del inglés humongous, "enorme") es un sistema de base de datos NoSQL orientado a documentos de código abierto y escrito en C++, que en lugar de guardar los datos en tablas lo hace en estructuras de datos BSON (similar a JSON) con un esquema dinámico. Al ser un proyecto de código abierto, sus binarios están disponibles para los sistemas operativos Windows, GNU/Linux, OS X y Solaris y es usado en múltiples proyectos o implementaciones en empresas como MTV Network, Craigslist, BCI o Foursquare.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal_sqlserver" class="modal">
+        <div class="modal__container">
+            <div class="modal__header">
+                <h2 class="modal__title">SQL Server</h2>
+                <a class="close__modal" href="#">
+                    <img src="images/close.png" alt="">
+                </a>
+            </div>
+
+            <div class="modal__info">
+                <div class="modal__image-container">
+                    <img class="modal__image" src="images/sqlserver.svg" alt="Logo HTML ">
+                </div>
+                <p class="modal__text">
+                    Microsoft SQL Server es uno de los principales sistemas de gestión de bases de datos relacional del mercado que presta servicio a un amplio abanico de aplicaciones de software destinadas a la inteligencia empresarial y análisis sobre entornos corporativos.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
