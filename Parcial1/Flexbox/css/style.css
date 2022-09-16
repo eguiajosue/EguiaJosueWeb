@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #36486b;
+}
+
+
+.caja {
+    width: 100px;
+    height: 100px;
+    background-color: #f19595;
+    margin: 2px;
+    text-align: center;
+    color: #fff;
+    border: #000 solid 4px;
+}
