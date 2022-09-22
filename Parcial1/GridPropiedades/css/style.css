@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    grid-template-rows: repeat(3, 250px);
+    grid-template-areas: "bienvenida bienvenida muestra muestra"
+                         "producto1 producto2 muestra muestra"
+                         "texto producto3 producto4 producto5";
+    justify-items: stretch;
+    align-items: stretch;
+    column-gap: 10px;
+    row-gap: 10px;
+    place-content: center;
+}
+
+.elemento {
+    background-repeat: no-repeat;
+    background-size: 200px 250px;
+}
+
+#elemento1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: bienvenida
+}
+
+#elemento1 > p {
+    font-size: 6rem;
+    font-family: Impact;
+}
+
+#elemento1 > span {
+    font-family: Arial;
+}
+
+#elemento1 > a {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #a47b7b;
+    color: #fff;
+    text-decoration: none;
+}
+
+#elemento2 {
+    grid-area: producto1;
+    background-image: url('../images/producto1.jpg');
+}
+
+#elemento3 { 
+    grid-area: producto2;
+    background-image: url('../images/producto2.jpg');
+}
+
+#elemento4 {
+    grid-area: muestra;
+    background-image: url('../images/promocion.jpg');
+    background-size: 400px 500px;
+}
+
+#elemento5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: texto
+}
+
+#elemento5 > p{
+    font-size: 4rem;
+    font-family: Impact;
+}
+
+#elemento6 {
+    grid-area: producto3;
+    background-image: url('../images/producto3.jpg');
+}
+
+#elemento7 {
+    grid-area: producto4;
+    background-image: url('../images/producto4.jpg');
+}
+
+#elemento8 {
+    grid-area: producto5;
+    background-image: url('../images/producto5.jpg');
+}
+
+.zoom {
+    -moz-osx-font-smoothing: grayscale;
+    cursor: pointer;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transform: translateZ(0);
+    transition: transform 0.3s ease-out;
+}
+.zoom:hover,
+.zoom:focus { transform: scale(1.05); }
+.zoom:active { transform: scale(1); }
