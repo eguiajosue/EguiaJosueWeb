@@ -1,0 +1,25 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+input {
+    display: none;
+}
+
+input:checked + .sidebar {
+    display: none;
+}
+
+.sidebar {
+    position: fixed;
+    background-color: blue;
+    width: 40%;
+    height: 100%;
+    overflow: auto;
+}
+
+a {
+    color: #fff;
+}

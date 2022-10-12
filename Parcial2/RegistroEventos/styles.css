@@ -1,0 +1,140 @@
+/* Variables */
+:root {
+    --main-color: #2c3e50;
+    --main-hover-color: #1f3041;
+    --secondary-color: #d7d7d7;
+    --secondary-hover-color: #b6b6b6;
+    --background-color: #ecf0f1;
+    --secondary-bg-color: #413c3c;
+    --font-color: #4d4949;
+    --white: #eee;
+    --black: #000;
+}
+
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: var(--background-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Estilos del encabezado*/
+.header {
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background-color: var(--secondary-bg-color);
+}
+
+.header__text {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Tahoma;
+    font-weight: bold;
+    background-color: var(--secondary-bg-color);
+    color: var(--white);
+}
+
+.header__data {
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--white);
+    font-size: 0.7rem;
+    background-color: var(--secondary-bg-color);
+}
+
+/* Estilos para la lista */
+.list {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 0;
+    list-style: none;
+    font-size: 18px;
+}
+
+/* Estilos de los encabezados y elementos de la lista
+    Se elimina la viñeta
+*/
+.list li {
+    list-style: none;
+}
+
+/* Estilos para los elementos de cada elemento de la lista */
+.list li a {
+    display: block;
+    width: 100%;
+    padding: 10px 10px 10px 20px;
+    background: var(--main-color);
+    color: var(--white);
+    border-right: #626262 solid 1px;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+/* Estios para el bloque de elementos dentro de un encabezado
+  - Inicialmete los sub-elementos tienen un alto de 0 por lo que se mantiene oculta la lista
+*/
+
+/*
+! Se intercambia el uso de:
+  display: block, display: none por el uso de alturas para agregar animaciones al momento de usar el taget
+*/
+.list li ul {
+    /*display: none;*/
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    transition: 0.3s all ease;
+}
+
+/* Se estilizan los elementos donde est[a el texto del elemento */
+.list li li a {
+    padding: 10px 10px 10px 40px;
+    background: var(--secondary-color);
+    color: var(--font-color);
+    font-size: 16px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Se quita el borde de abajo al ultimo elemento */
+.list li li:last-child a {
+    border-bottom: 0;
+}
+
+/* Al momento en que se de clic al encabezado de cada lista se va a ejecutar el pseudoselector :target que lo que hará es expandir la lista asignando una altura */
+.list li:target ul {
+    /*display: block;*/
+    max-height: 300px;
+    transition: 0.5s all ease;
+}
+
+/* Al momento en que un elemento <a> sea visitado se estiliza el texto */
+.list li a:visited {
+    color: #fff;
+}
+
+.list__header a:hover {
+    background-color: var(--main-hover-color);
+}
+
+.list li ul li a:hover {
+    background-color: var(--secondary-hover-color);
+}
+
+/* Uso de Media Query's */
+@media (max-width: 525px) {
+    .list {
+        flex-direction: column;
+    }
+
+    .list li a {
+        border-top: #626262 solid 1px;
+    }
+}
