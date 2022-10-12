@@ -7,9 +7,10 @@ Escuchar eventos en el documento html mediante
 
 const elementos = document.querySelectorAll(".element");
 
-for (const elemento of elementos) {
+elementos.forEach(elemento => {
     elemento.addEventListener("click", () => {
         alert(`Opción seleccionada: ${elemento.textContent}`)
     })
-}
+})
+
 
