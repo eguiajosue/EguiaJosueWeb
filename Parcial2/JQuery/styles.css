@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #807c7c;
+}
+
+.header {
+    padding: 1rem;
+    background-color: #1f1e1e;
+}
+
+.title {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    color: #fff;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    grid-template-rows: repeat(3, 150px);
+    place-content: center;
+    justify-items: stretch;
+    align-items: stretch;
+    width: 100vw;
+    height: 80vh;
+    gap: 20px;
+}
+
+.card {
+    background-color: transparent;
+    width: 150px;
+    height: 150px;
+    perspective: 1000px;
+}
+
+.card-inside {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+}
+
+.image {
+    width: 150px;
+    height: 150px;
+}
+
+.front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0e203b;
+    box-shadow: 1px 1px 15px #333333;
+    color: black;
+}
+
+.symbol {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 6rem;
+    color: #fff;
+}
+
+.back {
+    background-color: transparent;
+    transform: rotateY(180deg);
+}
+
+.selected {
+    transform: rotateY(180deg);
+}
