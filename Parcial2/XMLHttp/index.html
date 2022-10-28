@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" >
+<head >
+	<meta charset="UTF-8" >
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" >
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" >
+	<title >Document</title >
+	<link rel="stylesheet" href="css/styles.css" >
+</head >
+<body >
+	<header class="header">
+		<h1>Uso de XMLHttpRequest</h1>
+	</header>
+	
+	<main class="main">
+		<div class="title" >
+			<h2 >Calculo de Cuadrados</h2 >
+		</div >
+		
+		<div class="formulario">
+			<form action="data.php" method="get" id="formulario" >
+				<label for="num" >Ingrese un numero</label >
+				<input type="text" id="num" name="num" size="10">
+				
+				<input type="submit" id="botonCalc" value="Boton Calcular" >
+				<input type="submit" id="botonAjax" value="Boton Ajax" >
+			</form >
+			
+			<div>
+				<h2>Resultado</h2>
+				<p id="resultado"></p>
+			</div>
+		</div>
+	</main>
+	<script src="js/jquery-3.6.1.min.js" ></script >
+	<script src="js/main.js" ></script >
+</body >
+</html >
