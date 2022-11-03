@@ -1,57 +1,41 @@
-const url = 'https://api.disneyapi.dev/characters?page=1'
-const container = document.querySelector('.container')
-const cards = document.querySelectorAll('.character-card')
-const anterior = document.querySelector('.anterior')
-const siguiente = document.querySelector('.siguiente')
-const btnBuscar = document.querySelector('#btnBuscar')
-const formulario = document.querySelector('.busqueda')
-let buscarNombre = document.querySelector('#name')
+const url = 'https://api.disneyapi.dev/characters?page=1';
+const container = document.querySelector('.container');
+const cards = document.querySelectorAll('.character-card');
+const anterior = document.querySelector('.anterior');
+const siguiente = document.querySelector('.siguiente');
+const btnBuscar = document.querySelector('#btnBuscar');
+let buscarNombre = document.querySelector('#name');
 
-let paginaActual = 1
+let paginaActual = 1;
 
-const getData = () => {
-
-	fetch(`https://api.disneyapi.dev/characters`)
+const consultarPersonajes = (url) => {
+	fetch(url)
 			.then(response => response.json())
 			.then(data => {
-				container.innerHTML = data.data.map( (personaje) => crearPersonaje(personaje)).join('');
-			})
-}
+				container.innerHTML = data.data.map((personaje) => crearPersonaje(personaje)).join('');
+			});
+};
 
-const anteriorPagina = () => {
-	anterior.addEventListener('click', () => {
-		fetch(`https://api.disneyapi.dev/characters?page=${--paginaActual}`)
-				.then(response => response.json())
-				.then(data => {
-					container.innerHTML = data.data.map( (personaje) => crearPersonaje(personaje)).join('');
-				})
-	})
-}
+anterior.addEventListener('click' , () => {
+	let url = `https://api.disneyapi.dev/characters?page=${--paginaActual}`;
+	consultarPersonajes(url);
+});
 
-const siguientePagina = () => {
-	siguiente.addEventListener('click', () => {
-		fetch(`https://api.disneyapi.dev/characters?page=${++paginaActual}`)
-				.then(response => response.json())
-				.then(data => {
-					container.innerHTML = data.data.map( (personaje) => crearPersonaje(personaje)).join('');
-				})
-	})
-}
+siguiente.addEventListener('click' , () => {
+	let url = `https://api.disneyapi.dev/characters?page=${++paginaActual}`;
+	consultarPersonajes(url);
+});
 
-const buscarPorNombre = () => {
-	btnBuscar.addEventListener("click", (event) => {
-		event.preventDefault()
-		let nombre = buscarNombre.value
+btnBuscar.addEventListener('click' , (event) => {
+	event.preventDefault();
+	let nombre = buscarNombre.value;
+	let url = `https://api.disneyapi.dev/character?name=${nombre}`;
+	consultarPersonajes(url);
+});
 
-		fetch(`https://api.disneyapi.dev/character?name=${nombre}`)
-				.then(response => response.json())
-				.then(data => {
-					container.innerHTML = data.data.map( (personaje) => crearPersonaje(personaje)).join('');
-				})
-	})
-}
+consultarPersonajes(url);
 
-const crearPersonaje = ({_id, name, imageUrl, films}) => {
+const crearPersonaje = ({ _id , name , imageUrl , films }) => {
 	return `
 		<div class="character-card">
 			<div class="character-info">
@@ -63,10 +47,5 @@ const crearPersonaje = ({_id, name, imageUrl, films}) => {
 			<div class="character-films">
 			</div>
 		</div>
-	`
-}
-
-getData()
-anteriorPagina()
-siguientePagina()
-buscarPorNombre()
+	`;
+};
