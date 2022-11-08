@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" >
+<head >
+	<meta charset="UTF-8" >
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" >
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" >
+	<title >Document</title >
+</head >
+<body >
+
+	<label for="cad" ></label >
+	<input id="cad" type="text" >
+	<button id="btn">Procesar</button>
+	<input type="text" id="resultM" disabled>
+	<input type="text" id="resultL" disabled>
+	
+	<script type="module">
+		
+		import { mayuscula, longitud } from './modulo';
+		
+		const btn = document.getElementById('btn')
+		
+		btn.addEventListener('click', function () {
+			let palabra = document.getElementById('cad').value
+			let resultL = document.getElementById('resultL')
+			let resultM = document.getElementById('resultM')
+			resultL.value = mayuscula(palabra)
+			resultM.value = mayuscula(palabra)
+		})
+	</script >
+
+</body >
+</html >
