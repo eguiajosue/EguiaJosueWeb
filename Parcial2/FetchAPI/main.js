@@ -11,9 +11,9 @@ let paginaActual = 1;
 const consultarPersonajes = (url) => {
 	fetch(url)
 			.then(response => response.json())
-			.then(data => {
-				container.innerHTML = data.data.map((personaje) => crearPersonaje(personaje)).join('');
-			});
+			.then(function (data) {
+					container.innerHTML = data.data.map((personaje) => crearPersonaje(personaje)).join('');
+				});
 };
 
 anterior.addEventListener('click' , () => {
