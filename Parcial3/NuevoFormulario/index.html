@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- <script defer src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script defer src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script defer src="./js/index.js"></script>
+</head>
+
+<body class="">
+    <header>
+        <nav class="navbar navbar-expand bg-black">
+            <div class="nav navbar-nav mx-3">
+                <a class="nav-item nav-link text-white active" href="#" aria-current="page">Formulario <span
+                        class="visually-hidden">(current)</span></a>
+                <a class="nav-item nav-link text-white-50" href="#" data-bs-toggle="modal"
+                    data-bs-target="#modalLista">Ver lista</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <form class="mt-3" action=""">
+            <h2 class=" card-title p-3 rounded-1 text-center fw-bold fs-5 text-uppercase">
+            Datos
+            del Cliente</h2>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-3">
+                    <label for="nombre" class="form-label">Nombre del Cliente</label>
+                    <input type="text" class="form-control" name="nombre" id="nombre" ">
+                </div>
+
+                <div class=" col-sm-12 col-md-5 col-lg-4">
+                    <label for="apellidoPaterno" class="form-label">Apellido Paterno</label>
+                    <input type="text" class="form-control" name="apellidoPaterno" id="apellidoPaterno">
+                </div>
+
+                <div class="col-sm-12 col-md-5 col-lg-4">
+                    <label for="apellidoMaterno" class="form-label">Apellido Materno</label>
+                    <input type="text" class="form-control" name="apellidoMaterno" id="apellidoMaterno">
+                </div>
+
+                <div class="col-sm-12 col-md-2 col-lg-1">
+                    <label for="edad" class="form-label">Edad</label>
+                    <input type="number" class="form-control" name="edad" id="edad">
+                </div>
+            </div>
+
+            <h2 class="card-title p-3 mt-5 rounded-1 text-center fw-bold fs-5 text-uppercase">
+                Información del Tatuaje</h2>
+
+            <div class="row">
+                <div class="col-sm-12 col-lg-2">
+                    <label for="numeroTicket" class="form-label">Numero de Ticket</label>
+                    <input type="text" class="form-control" name="numeroTicket" id="numeroTicket" placeholder="">
+                </div>
+
+                <div class="col-sm-12 col-lg-6">
+                    <label for="nombreTatuador" class="form-label">Nombre del Tatuador</label>
+                    <input type="text" class="form-control" name="nombreTatuador" id="nombreTatuador" placeholder="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-lg-5">
+                    <label for="descripcion" class="form-label">Descripcion del Tatuaje</label>
+                    <textarea class="form-control" id="descripcion" rows="1"></textarea>
+                </div>
+
+                <div class="col-sm-12 col-lg-3">
+                    <label for="estilo" class="form-label">Estilo</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="estilo" id="estilo" placeholder="">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon1"
+                            data-bs-toggle="modal" data-bs-target="#modalEstilos">
+                            <i class="bi bi-plus-lg"></i>&#8203;
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-2">
+                    <label for="tamano" class="form-label">Tamaño en cm</label>
+                    <input type="number" class="form-control" name="tamano" id="tamano" placeholder="">
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-2">
+                    <label for="precio" class="form-label">Precio</label>
+                    <input type="number" class="form-control" name="precio" id="precio" placeholder="">
+                </div>
+
+                <div class="mt-4">
+                    <button type="button" class="btn btn-outline-secondary" id="liveToastBtn">Mostrar toast</button>
+                    <button type="button" class="btn btn-outline-secondary" id="capturarDatos" data-bs-toggle="tooltip"
+                        data-bs-placement="right"
+                        data-bs-title='Los datos se muestran en la tabla dentro de "Ver Lista"'>Capturar datos
+                        (Hardcoreado)</button>
+                </div>
+
+                <div class="d-grid gap-2 col-12 mx-auto mt-3">
+                    <button type="submit" id="agendarCita" class="btn btn-dark btn-lg">
+                        Agendar Cita
+                        <i class="bi bi-calendar-plus mx-2"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <div class="modal fade" id="modalEstilos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Lista de Estilos</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="radio" class="btn-check checkEstilo" name="opcionEstilo" id="blackwork"
+                            autocomplete="off" value="Blackwork">
+                        <label class="btn btn-outline-dark m-1" for="blackwork">Blackwork</label>
+
+                        <input type="radio" class="btn-check checkEstilo" name="opcionEstilo" id="tradicional"
+                            autocomplete="off" value="Tradicional">
+                        <label class="btn btn-outline-dark m-1" for="tradicional">Tradicional</label>
+
+                        <input type="radio" class="btn-check checkEstilo" name="opcionEstilo" id="dotwork" autocomplete="off"
+                            value="Dotwork">
+                        <label class="btn btn-outline-dark m-1" for="dotwork">Dotwork</label>
+
+                        <input type="radio" class="btn-check checkEstilo" name="opcionEstilo" id="black & grey"
+                            autocomplete="off" value="Black & Grey">
+                        <label class="btn btn-outline-dark m-1" for="black & grey">Black & Grey</label>
+
+                        <input type="radio" class="btn-check checkEstilo" name="opcionEstilo" id="acuarela"
+                            autocomplete="off" value="Acuarela">
+                        <label class="btn btn-outline-dark m-1" for="acuarela">Acuarela</label>
+
+                        <input type="radio" class="btn-check checkEstilo" name="opcionEstilo" id="japones" autocomplete="off"
+                            value="Japonés">
+                        <label class="btn btn-outline-dark m-1" for="japones">Japonés</label>
+
+                        <input type="radio" class="btn-check checkEstilo" name="opcionEstilo" id="realista"
+                            autocomplete="off" value="Realista">
+                        <label class="btn btn-outline-dark m-1" for="realista">Realista</label>
+
+                        <input type="radio" class="btn-check checkEstilo" name="opcionEstilo" id="ornamental"
+                            autocomplete="off" value="Ornamental">
+                        <label class="btn btn-outline-dark m-1" for="ornamental">Ornamental</label>
+
+                        <input type="radio" class="btn-check checkEstilo" name="opcionEstilo" id="tribal" autocomplete="off"
+                            value="Tribal">
+                        <label class="btn btn-outline-dark m-1" for="tribal">Tribal</label>
+
+                        <input type="radio" class="btn-check checkEstilo" name="opcionEstilo" id="gotico" autocomplete="off"
+                            value="Gótico">
+                        <label class="btn btn-outline-dark m-1" for="gotico">Gótio</label>
+
+                        <input type="radio" class="btn-check checkEstilo" name="opcionEstilo" id="brush" autocomplete="off"
+                            value="Brush">
+                        <label class="btn btn-outline-dark m-1" for="brush">Brush</label>
+
+                        <input type="radio" class="btn-check checkEstilo" name="opcionEstilo" id="blackout"
+                            autocomplete="off" value="Blackout">
+                        <label class="btn btn-outline-dark m-1" for="blackout">Blackout</label>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-secondary" id="guardarEstilo"
+                            data-bs-dismiss="modal">Seleccionar Estilo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalLista" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen modal-dialog-scrollable modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Lista de citas realizadas</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table" id="tablaCitas">
+                            <thead>
+                                <tr>
+                                    <th scope="col">N° Ticket</th>
+                                    <th scope="col">Nombre Cliente</th>
+                                    <th scope="col">Edad</th>
+                                    <th scope="col">Tatuador</th>
+                                    <th scope="col">Hora / Fecha cita</th>
+                                    <th scope="col">Descripcion del Tatuaje</th>
+                                    <th scope="col">Tamaño</th>
+                                    <th scope="col">¿Es a color?</th>
+                                    <th scope="col">Precio</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cuerpoTabla">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-grid gap-2 col-12 mx-auto mt-3">
+                            <button type="button" class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header text-white" id="toast-header">
+                    <i class="" id="toast-icon"></i>
+                    <strong class="me-auto" id="toast-title"></strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body" id="toast-text"></div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
