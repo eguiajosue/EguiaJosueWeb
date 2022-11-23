@@ -10,27 +10,27 @@ const failedToast = {
   text: 'Se produjo un error'
 }
 
+// document.querySelector('#capturarDatos').addEventListener("click", async () => {
+//   const respuesta = await fetch("conexion.php")
+//   const dato = await respuesta.json()
 
-document.querySelector('#capturarDatos').addEventListener("click", async () => {
-  const respuesta = await fetch("conexion.php")
-  const dato = await respuesta.json()
+//   document.querySelector('#cuerpoTabla').innerHTML = `
+//   <tr>
+//       <td>${dato.numero_ticket}</td>
+//       <td>${dato.nombre_cliente + ' ' + dato.apellido_paterno_cliente + ' ' + dato.apellido_materno_cliente}</td>
+//       <td>${dato.edad}</td>
+//       <td>${dato.tatuador}</td>
+//       <td>${dato.fecha_citada + ' ' + dato.hora_citada}</td>
+//       <td>${dato.descripcion_tatuaje}</td>
+//       <td>${dato.size}</td>
+//       <td>${dato.estilo}</td>
+//       <td>${dato.color == 1 ? "Si" : "No"}</td>
+//       <td>$${dato.precio}</td>
+//   </tr>
+//   `
+//   generarToast(successToast.type, successToast.title, successToast.text);
 
-  document.querySelector('#cuerpoTabla').innerHTML = `
-  <tr>
-      <th>${dato.numeroTicket}</th>
-      <td>${dato.nombreCliente + ' ' + dato.apellidoPaterno + ' ' + dato.apellidoMaterno}</td>
-      <td>${dato.edad}</td>
-      <td>${dato.nombreTatuador}</td>
-      <td>${dato.fechaCitada + ' ' + dato.horaCitada}</td>
-      <td>${dato.descripcion}</td>
-      <td>${dato.tamaño}</td>
-      <td>${dato.color}</td>
-      <td>$${dato.precio}</td>
-  </tr>
-  `
-  generarToast(successToast.type, successToast.title, successToast.text);
-
-})
+// })
 
 function generarToast(color, titulo, texto) {
   const toastTrigger = document.getElementById('liveToast');
@@ -42,6 +42,8 @@ function generarToast(color, titulo, texto) {
 
   toastTitle.textContent = titulo
   toastText.textContent = texto
+  toastColor.classList.remove(successToast.type);
+  toastColor.classList.remove(failedToast.type);
   toastColor.classList.add(color);
 
   createToast.show();
@@ -61,25 +63,24 @@ document.querySelector('#guardarEstilo').addEventListener("click", () => {
   }
 })
 
-document.querySelectorAll('#btnGet').addEventListener("click", async () => {
-  let datosFormulario = new FormData(document.getElementById('formulario'));
-  let respuesta = await fetch('getRegistro.php', {
-    method: 'POST',
-    body: datosFormulario
-  })
-  let dato = await respuesta.json();
+document.querySelector('#btnBuscar').addEventListener("click", async () => {
+  const inputBuscar = document.querySelector('#buscarNumeroTicket').value;
 
-  document.querySelector('#cuerpoTabla').innerHTML = `
-  <tr>
-      <th>${dato.numeroTicket}</th>
-      <td>${dato.nombreCliente + ' ' + dato.apellidoPaterno + ' ' + dato.apellidoMaterno}</td>
-      <td>${dato.edad}</td>
-      <td>${dato.nombreTatuador}</td>
-      <td>${dato.fechaCitada + ' ' + dato.horaCitada}</td>
-      <td>${dato.descripcion}</td>
-      <td>${dato.tamaño}</td>
-      <td>${dato.color}</td>
-      <td>$${dato.precio}</td>
-  </tr>
-  `
+  if (inputBuscar == "") {
+    generarToast(failedToast.type, failedToast.title, "Los datos de la cita no se encontraron");
+  } else {
+    let datosFormulario = new FormData(document.getElementById('formulario'));
+    let respuesta = await fetch('conexion.php', {
+      method: 'POST',
+      body: datosFormulario
+    });
+    let dato = await respuesta.json();
+
+    document.getElementById('nombre').value = dato.nombre_cliente;
+    document.getElementById('apellidoPaterno').value = dato.apellido_paterno_cliente;
+    document.getElementById('apellidoMaterno').value = dato.apellido_materno_cliente;
+    document.getElementById('edad').value = dato.edad;
+
+    generarToast(successToast.type, "Cita encontrada", "Los datos de la cita se encontraron correctamente");
+  }
 })

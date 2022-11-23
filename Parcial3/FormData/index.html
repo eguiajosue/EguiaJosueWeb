@@ -8,14 +8,16 @@
     <title>Document</title>
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.css">
     <!-- <script defer src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
     <script defer src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
     <script defer src="./js/index.js"></script>
 </head>
 
 <body class="">
     <header>
-        <nav class="navbar navbar-expand bg-black">
+        <nav class="navbar navbar-expand d-flex justify-content-between bg-black">
             <div class="nav navbar-nav mx-3">
                 <a class="nav-item nav-link text-white active" href="#" aria-current="page">Formulario <span
                         class="visually-hidden">(current)</span></a>
@@ -26,14 +28,27 @@
     </header>
 
     <main class="container">
-        <form id="formulario" class="mt-3" action=""">
+        <form id="formulario" class="mt-3" action="">
+
+            <div class="input-group w-100 mb-3 float-end ">
+                <input type="number" class="form-control form-control-sm" name="buscarNumeroTicket"
+                    id="buscarNumeroTicket" placeholder="Buscar por numero de ticket" aria-label="Numero de Ticket"
+                    aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" id="btnBuscar" type="button">
+                        <i class="bi bi-search"></i>
+                        Buscar
+                    </button>
+                </div>
+            </div>
+
             <h2 class=" card-title p-3 rounded-1 text-center fw-bold fs-5 text-uppercase">
-            Datos
-            del Cliente</h2>
+                Datos
+                del Cliente</h2>
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-3">
                     <label for="nombre" class="form-label">Nombre del Cliente</label>
-                    <input type="text" class="form-control" name="nombre" id="nombre" ">
+                    <input type="text" class="form-control" name="nombre" id="nombre">
                 </div>
 
                 <div class=" col-sm-12 col-md-5 col-lg-4">
@@ -65,6 +80,16 @@
                     <label for="nombreTatuador" class="form-label">Nombre del Tatuador</label>
                     <input type="text" class="form-control" name="nombreTatuador" id="nombreTatuador" placeholder="">
                 </div>
+
+                <div class="col-sm-12 col-lg-2">
+                    <label for="fechaCitada" class="form-label">Fecha Citada</label>
+                    <input type="date" class="form-control" name="fechaCitada" id="fechaCitada">
+                </div>
+
+                <div class="col-sm-12 col-lg-2">
+                    <label for="horaCitada" class="form-label">Hora Citada</label>
+                    <input type="time" class="form-control" name="horaCitada" id="horaCitada">
+                </div>
             </div>
             <div class="row">
                 <div class="col-sm-12 col-lg-5">
@@ -94,12 +119,11 @@
                 </div>
 
                 <div class="mt-4">
-                    <button type="button" class="btn btn-outline-secondary" id="liveToastBtn">Mostrar toast</button>
+                    <!-- <button type="button" class="btn btn-outline-secondary" id="liveToastBtn">Mostrar toast</button>
                     <button type="button" class="btn btn-outline-secondary" id="capturarDatos" data-bs-toggle="tooltip"
                         data-bs-placement="right"
                         data-bs-title='Los datos se muestran en la tabla dentro de "Ver Lista"'>Capturar datos
-                        (Hardcoreado)</button>
-                    <button class="btn btn-outline-secondary" id="btnGet">GET</button>
+                        (Hardcoreado)</button> -->
                 </div>
 
                 <div class="d-grid gap-2 col-12 mx-auto mt-3">
@@ -111,11 +135,11 @@
             </div>
         </form>
 
-        <div class="modal fade" id="modalEstilos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modalEstilos" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Lista de Estilos</h1>
+                        <h1 class="modal-title fs-5" id="">Lista de Estilos</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -176,7 +200,7 @@
             </div>
         </div>
 
-        <div class="modal fade" id="modalLista" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modalLista" tabindex="-1" aria-labelledby="modalLista" aria-hidden="true">
             <div class="modal-dialog modal-fullscreen modal-dialog-scrollable modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -194,6 +218,7 @@
                                     <th scope="col">Hora / Fecha cita</th>
                                     <th scope="col">Descripcion del Tatuaje</th>
                                     <th scope="col">Tamaño</th>
+                                    <th scope="col">Estilo</th>
                                     <th scope="col">¿Es a color?</th>
                                     <th scope="col">Precio</th>
                                 </tr>

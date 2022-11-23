@@ -10,7 +10,7 @@ $registro["fechaCitada"] = date("Y-m-d");
 $registro["horaCitada"] = date("H:i:s");
 $registro["descripcion"] = "Soga con un numero 13 dentro";
 $registro["tamaño"] = 5;
-$registro["color"] = false;;
+$registro["color"] = false;
 $registro["precio"] = 300;
 
 echo json_encode($registro);
