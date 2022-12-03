@@ -1,14 +1,11 @@
 <?php
+include('./conexion.php');
+
 
 $numero_ticket = $_POST['buscarNumeroTicket'];
 
-$servidor = "localhost";
-$basedatos = "citatatuaje";
-$usuario = "root";
-$password = "";
+//$numero_ticket = 1;
 
-
-$con = mysqli_connect($servidor, $usuario, $password, $basedatos) or die("No se pudo conectar a la base de datos");
 $consulta = "SELECT * FROM cita WHERE numero_ticket = $numero_ticket";
 
 $registro = mysqli_query($con, $consulta) or die("No se puede hacer un SELECT");

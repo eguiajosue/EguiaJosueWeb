@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="formulario">
+      <label for="nombre">Nombre:</label>
+      <input type="text" placeholder="Nombre" name="nombre" />
+      <input type="button" id="enviar" value="Generar PDF" />
+    </form>
+
+    <script>
+      document
+        .getElementById("enviar")
+        .addEventListener("click", async function () {
+          console.log("object");
+
+          let formulario = document.getElementById('formulario');
+          let bodyContent = new FormData(formulario);
+
+          let response = await fetch(
+            "http://localhost/EguiaJosueWeb/Parcial3/LibreriaPhp/crearpdf.php",
+            {
+              method: "POST",
+              body: bodyContent,
+            }
+          );
+
+          const archivo = await response.blob();
+          const archivoURL = URL.createObjectURL(archivo)
+
+          window.open(archivoURL)
+        });
+    </script>
+  </body>
+</html>
