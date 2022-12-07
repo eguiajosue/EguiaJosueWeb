@@ -217,8 +217,8 @@
                                     <th scope="col">Descripcion del Tatuaje</th>
                                     <th scope="col">Tamaño</th>
                                     <th scope="col">Estilo</th>
-                                    <th scope="col">¿Es a color?</th>
                                     <th scope="col">Precio</th>
+                                    <th scope="col">Controles</th>
                                 </tr>
                             </thead>
                             <tbody id="cuerpoTabla">

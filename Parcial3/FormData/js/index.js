@@ -32,14 +32,20 @@ window.addEventListener("load", async function () {
   const respuesta = await fetch("php/findAll.php");
   const datos = await respuesta.json();
   datos.forEach( dato => {
-    
     tabla.innerHTML += `<tr>
-      <th>${dato.nombre_cliente}</th>
-      <td>${dato.apellido_paterno_cliente}</td>
-      <td>${dato.apellido_materno_cliente}</td>
+      <th>${dato.numero_ticket}</th>
+      <td>${dato.nombre_cliente} ${dato.apellido_paterno_cliente} ${dato.apellido_materno_cliente}</td>
+      <td>${dato.edad}</td>
       <td>${dato.tatuador}</td>
-      <td>${dato.fecha_citada }</td>
-
+      <td>${dato.fecha_citada } ${dato.hora_citada}</td>
+      <td>${dato.descripcion_tatuaje}</td>
+      <td>${dato.size}</td>
+      <td>${dato.estilo}</td>
+      <td>${dato.precio}</td>
+      <td>
+        <button class="btn btn-secondary">Editar</button>
+        <button class="btn btn-danger">Eliminar</button>
+      </td>
     </tr>`;
   } )
 });
@@ -61,7 +67,7 @@ document.querySelector("#guardarEstilo").addEventListener("click", () => {
 document.querySelector("#btnBuscar").addEventListener("click", async () => {
   const inputBuscar = document.querySelector("#buscarNumeroTicket").value;
 
-  if (inputBuscar == "") {
+  if (inputBuscar === "") {
     generarToast(
       failedToast.type,
       failedToast.title,
@@ -77,10 +83,8 @@ document.querySelector("#btnBuscar").addEventListener("click", async () => {
     let dato = await respuesta.json();
 
     document.getElementById("nombre").value = dato.nombre_cliente;
-    document.getElementById("apellidoPaterno").value =
-      dato.apellido_paterno_cliente;
-    document.getElementById("apellidoMaterno").value =
-      dato.apellido_materno_cliente;
+    document.getElementById("apellidoPaterno").value = dato.apellido_paterno_cliente;
+    document.getElementById("apellidoMaterno").value = dato.apellido_materno_cliente;
     document.getElementById("edad").value = dato.edad;
     document.getElementById("numeroTicket").value = dato.numero_ticket;
     document.getElementById("nombreTatuador").value = dato.tatuador;
