@@ -1,10 +1,9 @@
 new gridjs.Grid({
-  columns: ["Name", "Email", "Phone Number"],
+  columns: ["Numero de Control", "Nombre", "Carrera"],
   data: [
-    ["John", "john@example.com", "(353) 01 222 3333"],
-    ["Mark", "mark@gmail.com", "(01) 22 888 4444"],
-    ["Eoin", "eoin@gmail.com", "0097 22 654 00033"],
-    ["Sarah", "sarahcdd@gmail.com", "+322 876 1233"],
-    ["Afshin", "afshin@mail.com", "(353) 22 87 8356"]
+    ["20100191", "Josue Eguia", "Sistemas"],
+    ["18100660", "Cristina Salazar", "Administracion"],
+    ["18100554", "Jorge Kassim", "Gestion Empresarial"],
+    ["20100003", "Lorena Avila", "Arquitectura"]
   ]
 }).render(document.getElementById("wrapper"));
